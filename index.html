@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 4th Monthsary, Babyyy Ica ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'blush-pink': '#f8c6d0',
+                        'pastel-red': '#f4a7b9',
+                        'cream': '#fff9f2',
+                        'gold': '#e6c88c',
+                        'deep-rose': '#e75480'
+                    },
+                    fontFamily: {
+                        'script': ['Dancing Script', 'cursive'],
+                        'poppins': ['Poppins', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #fff9f2 0%, #f8c6d0 100%);
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #f4a7b9;
+            transform: rotate(-45deg);
+            animation: fall linear forwards;
+            z-index: -1;
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #f4a7b9;
+            border-radius: 50%;
+        }
+        
+        .heart:before {
+            top: -10px;
+            left: 0;
+        }
+        
+        .heart:after {
+            top: 0;
+            left: 10px;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: .15em solid #e75480;
+            white-space: nowrap;
+            margin: 0 auto;
+            letter-spacing: .15em;
+            animation: 
+                typing 3.5s steps(40, end),
+                blink-caret .75s step-end infinite;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #e75480; }
+        }
+        
+        .fade-in-out {
+            animation: fadeInOut 8s infinite;
+        }
+        
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateY(20px); }
+            10% { opacity: 1; transform: translateY(0); }
+            90% { opacity: 1; transform: translateY(0); }
+            100% { opacity: 0; transform: translateY(-20px); }
+        }
+        
+        .photo-frame {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            border-radius: 50%;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(231, 84, 128, 0.3);
+            border: 8px solid #fff;
+            animation: pulse 4s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(231, 84, 128, 0.4); }
+            70% { box-shadow: 0 0 0 15px rgba(231, 84, 128, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(231, 84, 128, 0); }
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .photo-frame:hover img {
+            transform: scale(1.05);
+        }
+        
+        .counter-box {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(231, 84, 128, 0.2);
+            border: 1px solid rgba(231, 84, 128, 0.2);
+        }
+        
+        .sparkle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: #e6c88c;
+            border-radius: 50%;
+            animation: sparkle 2s infinite;
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+            100% { opacity: 0; transform: scale(0); }
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            animation: fadeIn 0.5s;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #fff9f2 0%, #f8c6d0 100%);
+            margin: 10% auto;
+            padding: 30px;
+            border-radius: 20px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 15px 40px rgba(231, 84, 128, 0.4);
+            border: 2px solid #e6c88c;
+            position: relative;
+            animation: slideIn 0.5s;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .close {
+            color: #e75480;
+            float: right;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        
+        .close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .floating-note {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #e75480 0%, #f4a7b9 100%);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(231, 84, 128, 0.4);
+            cursor: pointer;
+            animation: float 3s ease-in-out infinite;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s;
+        }
+        
+        .floating-note:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(231, 84, 128, 0.6);
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .music-control {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(231, 84, 128, 0.3);
+            cursor: pointer;
+            z-index: 20;
+            transition: all 0.3s;
+            border: 2px solid #e75480;
+        }
+        
+        .music-control:hover {
+            transform: scale(1.1);
+            background: white;
+            box-shadow: 0 6px 15px rgba(231, 84, 128, 0.5);
+        }
+        
+        .music-control.playing {
+            animation: musicPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes musicPulse {
+            0% { box-shadow: 0 4px 10px rgba(231, 84, 128, 0.3); }
+            50% { box-shadow: 0 4px 10px rgba(231, 84, 128, 0.8), 0 0 0 5px rgba(231, 84, 128, 0.2); }
+            100% { box-shadow: 0 4px 10px rgba(231, 84, 128, 0.3); }
+        }
+
+        /* Auto-play prompt overlay */
+        .autoplay-prompt {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            animation: fadeIn 0.5s;
+        }
+
+        .autoplay-card {
+            background: linear-gradient(135deg, #fff9f2 0%, #f8c6d0 100%);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(231, 84, 128, 0.4);
+            border: 2px solid #e6c88c;
+            max-width: 400px;
+            animation: slideIn 0.5s;
+        }
+
+        .play-button {
+            background: linear-gradient(135deg, #e75480 0%, #f4a7b9 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .play-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(231, 84, 128, 0.6);
+        }
+        
+        @media (max-width: 768px) {
+            .photo-frame {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .modal-content {
+                width: 90%;
+                padding: 20px;
+            }
+            
+            .floating-note {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+
+            .autoplay-card {
+                margin: 20px;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Auto-play Prompt Overlay -->
+    <div class="autoplay-prompt" id="autoplayPrompt">
+        <div class="autoplay-card">
+            <i class="fas fa-music text-6xl text-deep-rose mb-4"></i>
+            <h2 class="text-2xl font-script text-deep-rose mb-4">Let's Add Some Magic! 🎵</h2>
+            <p class="text-pastel-red mb-4">Click below to start the romantic background music and make this moment even more special ❤️</p>
+            <button class="play-button" id="startMusicBtn">
+                <i class="fas fa-play"></i>
+                <span>Start Our Song</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Background Hearts -->
+    <div id="hearts-container"></div>
+    
+    <!-- Music Control -->
+    <div class="music-control playing" id="musicControl">
+        <i class="fas fa-volume-up text-deep-rose text-xl"></i>
+    </div>
+    
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop preload="auto" crossorigin="anonymous">
+        <source src="https://ia600109.us.archive.org/14/items/james-arthur-say-you-wont-let-go_202203/James%20Arthur%20-%20Say%20You%20Won%27t%20Let%20Go.mp3" type="audio/mpeg">
+    </audio>
+    
+    <!-- Main Content -->
+    <div class="container mx-auto px-4 py-10 flex flex-col items-center">
+        <!-- Header -->
+        <div class="text-center mb-12">
+            <h1 class="typewriter text-4xl md:text-5xl font-script text-deep-rose mb-4">Happy 4th Monthsary, Babyyy Ica ❤️</h1>
+            <p class="text-lg text-pastel-red italic">April 11, 2025 - Forever in my heart</p>
+        </div>
+        
+        <!-- Counter Section -->
+        <div class="counter-box p-6 mb-12 w-full max-w-2xl">
+            <h2 class="text-2xl font-semibold text-center mb-6 text-deep-rose">Our Love Timer</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                <div class="bg-cream p-4 rounded-xl shadow-sm">
+                    <div id="days" class="text-3xl font-bold text-deep-rose">00</div>
+                    <div class="text-sm text-pastel-red mt-1">Days</div>
+                </div>
+                <div class="bg-cream p-4 rounded-xl shadow-sm">
+                    <div id="hours" class="text-3xl font-bold text-deep-rose">00</div>
+                    <div class="text-sm text-pastel-red mt-1">Hours</div>
+                </div>
+                <div class="bg-cream p-4 rounded-xl shadow-sm">
+                    <div id="minutes" class="text-3xl font-bold text-deep-rose">00</div>
+                    <div class="text-sm text-pastel-red mt-1">Minutes</div>
+                </div>
+                <div class="bg-cream p-4 rounded-xl shadow-sm">
+                    <div id="seconds" class="text-3xl font-bold text-deep-rose">00</div>
+                    <div class="text-sm text-pastel-red mt-1">Seconds</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Photo Frame -->
+        <div class="photo-frame mb-12">
+            <img src="ica.jpg" alt="Our Love" class="rounded-full">
+        </div>
+        
+        <!-- Romantic Messages -->
+        <div class="relative h-32 w-full max-w-2xl mb-16">
+            <div id="messageContainer" class="absolute inset-0 flex items-center justify-center text-center px-4">
+                <p id="romanticMessage" class="text-xl text-deep-rose font-medium fade-in-out"></p>
+            </div>
+        </div>
+        
+        <!-- Footer Message -->
+        <div class="text-center max-w-2xl">
+            <p class="text-pastel-red italic">Even though we're miles apart, my love for you grows stronger every day. Thank you for being the most amazing person in my life.</p>
+        </div>
+    </div>
+    
+    <!-- Floating Love Note -->
+    <div class="floating-note" id="loveNoteBtn">
+        <i class="fas fa-heart"></i>
+        <span>My Love Letter</span>
+    </div>
+    
+    <!-- Modal -->
+    <div id="loveLetterModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 class="text-3xl font-script text-deep-rose mb-4 text-center">To My Dearest Babyyy Ica</h2>
+            <div class="text-pastel-red leading-relaxed">
+                <p class="mb-4">My love,</p>
+                <p class="mb-4">Four months ago, you became the most beautiful part of my life. Every day with you, even from afar, has been a gift I treasure more than words can express.</p>
+                <p class="mb-4">Your smile lights up my darkest days, your voice is my favorite melody, and your love is the anchor that keeps me grounded. Distance may separate our bodies, but nothing can separate our hearts.</p>
+                <p class="mb-4">As we celebrate our 4th monthsary, I want you to know that:</p>
+                <ul class="list-disc pl-6 mb-4 space-y-2">
+                    <li>You are the first thought in my morning and the last in my night</li>
+                    <li>Every moment without you feels like an eternity</li>
+                    <li>I dream of the day we'll be together soon</li>
+                    <li>You make ordinary days feel extraordinary</li>
+                </ul>
+                <p class="mb-4">Thank you for being patient, understanding, and incredibly loving. You're not just my girlfriend - you're my best friend, my soulmate, and my forever.</p>
+                <p class="text-deep-rose font-semibold text-center text-xl mt-6">Happy 4th Monthsary, my love. I love you to the moon and back ❤️</p>
+                <p class="text-right mt-6">Forever yours,<br>Your Devoted</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Enhanced music management
+        const music = document.getElementById('backgroundMusic');
+        const musicControl = document.getElementById('musicControl');
+        const autoplayPrompt = document.getElementById('autoplayPrompt');
+        const startMusicBtn = document.getElementById('startMusicBtn');
+        let isPlaying = false;
+        let userHasInteracted = false;
+
+        // Set initial volume
+        music.volume = 0.4;
+
+        // Function to start music with user interaction
+        function startMusic() {
+            userHasInteracted = true;
+            music.play().then(() => {
+                isPlaying = true;
+                musicControl.classList.add('playing');
+                musicControl.innerHTML = '<i class="fas fa-volume-up text-deep-rose text-xl"></i>';
+                autoplayPrompt.style.display = 'none';
+                
+                // Add subtle notification
+                showMusicNotification('🎵 Music is now playing');
+            }).catch((error) => {
+                console.log('Error playing audio:', error);
+                showMusicNotification('❌ Could not play music');
+            });
+        }
+
+        // Function to show music notification
+        function showMusicNotification(message) {
+            const notification = document.createElement('div');
+            notification.textContent = message;
+            notification.style.cssText = `
+                position: fixed;
+                top: 80px;
+                right: 20px;
+                background: rgba(231, 84, 128, 0.9);
+                color: white;
+                padding: 10px 20px;
+                border-radius: 25px;
+                font-size: 14px;
+                z-index: 1001;
+                animation: fadeIn 0.3s ease-out;
+            `;
+            document.body.appendChild(notification);
+            
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+
+        // Start music button click handler
+        startMusicBtn.addEventListener('click', startMusic);
+
+        // Try immediate autoplay (will likely be blocked)
+        music.play().then(() => {
+            isPlaying = true;
+            autoplayPrompt.style.display = 'none';
+            musicControl.classList.add('playing');
+        }).catch(() => {
+            // Autoplay blocked - show prompt
+            autoplayPrompt.style.display = 'flex';
+        });
+
+        // Enhanced music control functionality
+        musicControl.addEventListener('click', (e) => {
+            e.stopPropagation();
+            
+            if (!userHasInteracted) {
+                // If user hasn't interacted yet, start music
+                startMusic();
+                return;
+            }
+
+            if (isPlaying) {
+                music.pause();
+                musicControl.innerHTML = '<i class="fas fa-volume-mute text-deep-rose text-xl"></i>';
+                musicControl.classList.remove('playing');
+                isPlaying = false;
+                showMusicNotification('🔇 Music paused');
+            } else {
+                music.play().then(() => {
+                    musicControl.innerHTML = '<i class="fas fa-volume-up text-deep-rose text-xl"></i>';
+                    musicControl.classList.add('playing');
+                    isPlaying = true;
+                    showMusicNotification('🎵 Music resumed');
+                });
+            }
+        });
+
+        // Alternative interaction triggers
+        document.addEventListener('click', function(e) {
+            if (!userHasInteracted && e.target.id !== 'startMusicBtn') {
+                // Any click can trigger music if not started yet
+                if (!isPlaying) {
+                    setTimeout(() => {
+                        if (autoplayPrompt.style.display !== 'none') {
+                            startMusic();
+                        }
+                    }, 1000);
+                }
+            }
+        });
+
+        // Keyboard interaction
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space' && !userHasInteracted) {
+                e.preventDefault();
+                startMusic();
+            }
+        });
+
+        // Ensure music loops properly
+        music.addEventListener('ended', function() {
+            if (userHasInteracted) {
+                music.currentTime = 0;
+                music.play();
+            }
+        });
+
+        // Rest of your existing JavaScript...
+        
+        // Create falling hearts
+        function createHearts() {
+            const container = document.getElementById('hearts-container');
+            const heartCount = 30;
+            
+            for (let i = 0; i < heartCount; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                
+                // Random position
+                const left = Math.random() * 100;
+                heart.style.left = `${left}vw`;
+                
+                // Random size
+                const size = Math.random() * 15 + 10;
+                heart.style.width = `${size}px`;
+                heart.style.height = `${size}px`;
+                
+                // Random animation duration
+                const duration = Math.random() * 5 + 5;
+                heart.style.animationDuration = `${duration}s`;
+                
+                // Random delay
+                const delay = Math.random() * 5;
+                heart.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(heart);
+            }
+        }
+        
+        // Create sparkles
+        function createSparkles() {
+            const container = document.body;
+            const sparkleCount = 20;
+            
+            for (let i = 0; i < sparkleCount; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.classList.add('sparkle');
+                
+                // Random position
+                const left = Math.random() * 100;
+                const top = Math.random() * 100;
+                sparkle.style.left = `${left}vw`;
+                sparkle.style.top = `${top}vh`;
+                
+                // Random animation delay
+                const delay = Math.random() * 5;
+                sparkle.style.animationDelay = `${delay}s`;
+                
+                container.appendChild(sparkle);
+            }
+        }
+        
+        // Update countdown timer
+        function updateCountdown() {
+            const startDate = new Date('April 11, 2025 00:00:00').getTime();
+            const now = new Date().getTime();
+            const diff = now - startDate;
+            
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('days').innerText = days.toString().padStart(2, '0');
+            document.getElementById('hours').innerText = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').innerText = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').innerText = seconds.toString().padStart(2, '0');
+        }
+        
+        // Romantic messages
+        const messages = [
+            "Every moment with you is a treasure I hold dear ❤️",
+            "Distance means nothing when love is this strong 💕",
+            "You're the melody that plays in my heart every day 🎶",
+            "My love for you grows stronger with each passing day 💖",
+            "In my dreams, I'm always with you, my darling 😘",
+            "You make ordinary days feel like fairy tales ✨",
+            "Your smile is my favorite sight in the world 😍",
+            "Even oceans apart, you're always in my heart 🌊",
+            "Loving you is the best thing that ever happened to me 💘",
+            "You're not just my girlfriend, you're my everything 💞"
+        ];
+        
+        let currentMessageIndex = 0;
+        
+        function rotateMessages() {
+            const messageElement = document.getElementById('romanticMessage');
+            messageElement.classList.remove('fade-in-out');
+            
+            setTimeout(() => {
+                messageElement.innerText = messages[currentMessageIndex];
+                messageElement.classList.add('fade-in-out');
+                currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+            }, 100);
+        }
+        
+        // Modal functionality
+        const loveNoteBtn = document.getElementById('loveNoteBtn');
+        const modal = document.getElementById('loveLetterModal');
+        const closeBtn = document.querySelector('.close');
+        
+        loveNoteBtn.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+        
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+        
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+        
+        // Initialize everything
+        document.addEventListener('DOMContentLoaded', () => {
+            createHearts();
+            createSparkles();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            rotateMessages();
+            setInterval(rotateMessages, 8000);
+        });
+    </script>
+</body>
+</html>
